@@ -13,3 +13,9 @@ To run test
     1.Create test that verify the functionality of a specific feature.
 
     test function for individual test, describe function to group  tests.
+
+    use test.skip() to describe.only() skep any particular test
+
+    use test.only() or describe.only() to run any specific test.
+
+    Test Suite refers to one file of test.

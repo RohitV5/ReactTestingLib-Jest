@@ -2,7 +2,7 @@ import React from 'react'
 
 
 type Props = {
-  name:string
+  name?:string
 }
 
 function Greet({name}:Props) {
