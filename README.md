@@ -19,3 +19,6 @@ To run test
     use test.only() or describe.only() to run any specific test.
 
     Test Suite refers to one file of test.
+
+    Test file can be named as test.tsx or spec.tsx
+    All files in __tests__ folder are also tested with extension .tsx and .ts
