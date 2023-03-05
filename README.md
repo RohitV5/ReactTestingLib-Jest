@@ -22,3 +22,14 @@ To run test
 
     Test file can be named as test.tsx or spec.tsx
     All files in __tests__ folder are also tested with extension .tsx and .ts
+
+    Code coverage gives what percentage of code is tested
+
+    Statement coverage - How many statements have been tested.
+    Branches coverage - How many branches of the control structure (if statement for instance ) has been executed
+    Function coverage - How many functions defined test
+    Line Coverage - How many lines tested
+
+    Cove
+
+    
