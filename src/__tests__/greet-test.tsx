@@ -4,9 +4,15 @@ import React from "react";
 import Greet from "../components/greet/greet";
 //it and test are both same
 //Individual Test
-it("Greet renders correctly", () => {
+it("Greet renders correctly master", () => {
   render(<Greet name={"Rohit"} />);
-  const a = screen.getByText(/hello Rohit/i);
+  const a = screen.getByText(/hello Master/i);
+  expect(a).toBeInTheDocument();
+});
+
+it("Greet renders correctly", () => {
+  render(<Greet name={"Boing"} />);
+  const a = screen.getByText(/hello Boing/i);
   expect(a).toBeInTheDocument();
 });
 
@@ -20,7 +26,7 @@ describe("Way to test grouped test", () => {
 
   test("Greet renders correctly with name", () => {
     render(<Greet name={"Rohit"} />);
-    const a = screen.getByText(/hello Rohit/i);
+    const a = screen.getByText(/hello Master/i);
     expect(a).toBeInTheDocument();
   });
 });
@@ -36,7 +42,7 @@ describe("Way to test nested grouped test", () => {
   describe("Nested", () => {
     test("Greet renders correctly with name", () => {
       render(<Greet name={"Rohit"} />);
-      const a = screen.getByText(/hello Rohit/i);
+      const a = screen.getByText(/hello Master/i);
       expect(a).toBeInTheDocument();
     });
   });
