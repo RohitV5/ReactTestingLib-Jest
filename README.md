@@ -30,6 +30,31 @@ To run test
     Function coverage - How many functions defined test
     Line Coverage - How many lines tested
 
-    Cove
+    What to test?
+    Test the component renders
+    Test component renders with props
+    Test component renders in different states
+    Test component reacts to events
 
-    
+    What not to test
+    Implementation details (test only the behaviour, not how behaviour is implemented)
+    Third party code
+    Code that is not important from user point of view. (utils and shared)
+
+
+    RTL Queries
+    Every test we write involvoes generally the following basic steps
+    1.Render the component (render)
+    2.Find an element rendered by the components  
+    3.Assert against the element found in step 2 which will pass or fail the test.  (expect)
+
+    Queries are the method that testing library provides to find the element on the page.
+
+    To find single element getBy, queryBy, findBy
+
+    To find multiple getAllBy, queryAllBy , findAllBy
+
+    The suffix can be on the role, labeltext, placeholder text, displayvalue, alttext, title and finally testid.
+
+
+
