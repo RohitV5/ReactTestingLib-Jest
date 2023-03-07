@@ -1,16 +1,7 @@
-import React from "react";
+import { GreetProps } from './Greet.types'
 
-type Props = {
-  name?: string;
-};
-
-function Greet({ name }: Props) {
-  if (name === "Rohit") {
-    return <div>Hello Master</div>;
-  }else if(name === "Loki"){
-    return <div>Hello Master 2</div>; //not covered in test for checking covergae not 100%
-  }
-  return <div>Hello {name ? name : "Guest"}</div>;
+export const Greet = (props: GreetProps) => {
+  return <div>Hello {props.name ? props.name : 'Guest'}</div>
 }
 
 export default Greet;

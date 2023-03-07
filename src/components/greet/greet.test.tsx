@@ -5,7 +5,7 @@ import React from "react";
 //Individual Test
 test("Greet renders correctly", () => {
   render(<Greet name={"Rohit"} />);
-  const a = screen.getByText(/hello Master/i);
+  const a = screen.getByText(/hello Rohit/i);
   expect(a).toBeInTheDocument();
 });
 
@@ -19,7 +19,7 @@ describe("Way to test grouped test", () => {
 
   test("Greet renders correctly with name", () => {
     render(<Greet name={"Rohit"} />);
-    const a = screen.getByText(/hello Master/i);
+    const a = screen.getByText(/hello Rohit/i);
     expect(a).toBeInTheDocument();
   });
 });
@@ -35,7 +35,7 @@ describe("Way to test nested grouped test", () => {
   describe("Nested", () => {
     test("Greet renders correctly with name", () => {
       render(<Greet name={"Rohit"} />);
-      const a = screen.getByText(/hello Master/i);
+      const a = screen.getByText(/hello Rohit/i);
       expect(a).toBeInTheDocument();
     });
   });
