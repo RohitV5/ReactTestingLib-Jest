@@ -22,10 +22,11 @@ describe('Counter', () => {
   })
 
   test('renders a count of 1 after clicking the increment button', async () => {
-    user.setup()
+    
+    user.setup() //create a instance of user event
     render(<Counter />)
     const incrementButton = screen.getByRole('button', { name: 'Increment' })
-    await user.click(incrementButton)
+    await user.click(incrementButton)  // user events are asynchronus so we have to await 
     const countElement = screen.getByRole('heading')
     expect(countElement).toHaveTextContent('1')
   })

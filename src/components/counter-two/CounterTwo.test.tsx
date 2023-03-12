@@ -10,7 +10,7 @@ test('renders correctly', () => {
 
 test('handlers are called', async () => {
   user.setup()
-  const incrementHandler = jest.fn()
+  const incrementHandler = jest.fn() //dummy function
   const decrementHandler = jest.fn()
   render(
     <CounterTwo

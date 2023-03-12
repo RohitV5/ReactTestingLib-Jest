@@ -1,3 +1,5 @@
+What is A/B testing?
+
 To run test
 
 "@testing-library/jest-dom": "^5.16.5", <= Tools to run test (Test Runner)
@@ -66,6 +68,8 @@ Link: https://testing-library.com/docs/queries/byrole/
 
 Always try to use GetByRole to capture html elements. If that does not work the go for other query methods.
 
+Note: For input type number the role is spinbutton.
+
 
 [getByLabelText]
 If you want to get label with having a specific test.
@@ -129,5 +133,97 @@ Chrome plugin to help during testing
 ====================================
 Testing Playground - (comes with a frog icon)
 
-34
 
+Handling User Events
+====================
+user-event vs fireEvent
+
+fireEvent is a method from RTL which is used to dispatch DOM events.
+
+user-events simulates full interaction which may fire multiple events 
+and do aditional checks along the way. 
+
+For eg when user is clicks a button it fires a  onhover event also.
+For eg when user types into a textbox the element has to be focused and then the keyboard and input events are fired.\\
+
+
+user-events allow you to describe a user interaction instead of a concrete event.
+
+Pointer Interactions
+====================
+click(), dblClick(), tripleClick(), hover() and unhover()
+
+
+
+Pointer APIs (Low level)
+=============
+pointer({keys:'[MouseLeft]'}) left button click
+pointer({keys:'[MouseLeft][MouseRight]'}) left click followed by right click
+pointer('[MouseLeft][Mouseright]')   same , used only if keys is only argument to be passed
+pointer('[MouseLeft>]')  > for mouseleft keypressdown
+pointer('[/MouseLeft])  / for mouse left release
+
+
+
+Keyboard Interactions
+=====================
+input
+copy cut
+paste
+
+
+KeyboardAPI (Low level)
+keyboard('foo')   type foo
+keyboard('{Shift}A{/Shift}')  Hold A
+
+
+Testing with HOC
+=================
+to test a component with wrapper function we can add wrapper property in render method.
+Alternatively we can create util for all tests that require wrapper 
+https://testing-library.com/docs/react-testing-library/setup/
+
+Check test-utils.tsx file
+
+If needs to add HOC for all the components then add custom renderer which will provide all that HOC
+https://testing-library.com/docs/react-testing-library/setup/#custom-render
+
+
+Testing Custom Hooks
+=====================
+RenderHook method from RTL.
+
+Act will update the component state cause by any operation like custom hook call.
+
+Dummy Function
+===============
+ jest.fn() //dummy function
+
+ Mocking HTTP Request
+ ====================
+ MSW package
+
+ For Mocking Redux Store
+ ========================
+ https://www.npmjs.com/package/redux-mock-store
+ https://www.youtube.com/watch?v=2gGnszizizY&t=304s&ab_channel=ImranCodesReact
+
+
+
+
+
+Static Ananlysis testing (code is written in a certain way or not)
+========================
+Process of verifying that your code meets certain expectation without actually running it
+Ensure consistent style and formatting
+Check for common mistakes and possible bugs
+Limit the complexity of code and
+Verify type consistency
+
+Tools for static testing
+========================
+Typescript
+Eslint
+Prettier
+Husky
+lint-staged
